@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+  <bean  id="kfc" class="com.spring001.service.KfcWing"/>
+  <bean id="mcdonld" class="com.spring001.service.McDonlWing"/>
+  <bean id="steelAxe" class="com.spring001.service.SteelAxe"/>
+  <bean id="stoneAxe" class="com.spring001.service.StoneAxe"/>
+  <bean id="human" class="com.spring001.service.Human"
+   init-method="init" destroy-method="destroy" scope="prototype">
+     <property name="axe" ref="steelAxe"/>
+  </bean> 
+  <bean id="car" class="com.spring001.pojo.Car">
+    <constructor-arg type="double" value="200"/>
+    <constructor-arg type="java.lang.String" value="法拉利"/>
+  </bean>
+</beans>
